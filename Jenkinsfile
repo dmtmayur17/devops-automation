@@ -13,7 +13,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t javatechie/devops-integration .'
+                    sh 'docker build -t nithyareddy62/demo .'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
                    sh 'docker login -u nithyareddy62 -p ${nithyareddy@62}'
 
 }
-                   sh 'docker push javatechie/devops-integration'
+                   sh 'docker push nithyareddy62/demo'
                 }
             }
         }
