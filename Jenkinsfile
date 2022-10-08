@@ -1,13 +1,13 @@
 pipeline {
     agent any
-    tools{
-        Apache Maven '3.6.3'
-    }
+  
+
+
     stages{
         stage('Build Maven'){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Nithyareddy62/devops-automation']]])
-                sh 'mvn clean install'
+                git credentialsId: 'MyGitHub', url:'
+                
             }
         }
         stage('Build docker image'){
