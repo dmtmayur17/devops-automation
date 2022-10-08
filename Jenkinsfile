@@ -24,7 +24,7 @@ pipeline {
                    sh 'docker login -u nithyareddy62 -p ${nithyareddy@62}'
 
 }
-                   sh 'docker push nithyareddy62/demo'
+                   sh 'docker push nithyareddy62/devops-integration'
                 }
             }
         }
