@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('Build Maven'){
             steps{
-                git credentialsId: 'MyGitHub', url:'
+                git credentialsId: 'MyGitHub', url:'https://github.com/Nithyareddy62/devops-automation.git'
                 
             }
         }
