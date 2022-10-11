@@ -4,16 +4,16 @@ pipeline {
 
 
     stages{
-        stage('Build Maven'){
+        stage('Git Checkout'){
             steps{
-                git credentialsId: 'MyGitHub', url:'https://github.com/Nithyareddy62/devops-automation.git'
+                git credentialsId: 'MyGitHub',branch: 'main', url:'https://github.com/Nithyareddy62/devops-automation.git'
                 
             }
         }
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t nithyareddy62/devops-integration .'
+                    sh 'docker build -t nithyareddy62/ .'
                 }
             }
         }
