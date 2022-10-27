@@ -10,21 +10,27 @@ pipeline {
                 
             }
         }
+        stage('Build maven'){
+           steps{
+               sh 'mvn clean install'
+                 }
+         }
+            
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t nithyareddy62/ .'
+                    sh 'docker build -t nithyareddy62/demo.'
                 }
             }
         }
         stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'nithyareddy62', variable: 'nithyareddy@62')]) {
-                   sh 'docker login -u nithyareddy62 -p ${nithyareddy@62}'
+                   withCredentials([string(credentialsId: 'nithyareddy62', variable: 'nithyareddy')]) {
+                   sh 'docker login -u nithyareddy62 -p ${nithyareddy}'
 
 }
-                   sh 'docker push nithyareddy62/devops-integration'
+                   sh 'docker push nithyareddy62/demo
                 }
             }
         }
