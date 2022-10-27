@@ -20,6 +20,7 @@ pipeline {
             steps{
                 script{
                     sh 'docker build -t nithyareddy62/demo.'
+                    //sh 'sudo -S docker ps'
                 }
             }
         }
