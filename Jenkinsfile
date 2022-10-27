@@ -31,7 +31,7 @@ pipeline {
                    sh 'docker login -u nithyareddy62 -p ${nithyareddy}'
 
 }
-                   sh 'docker push nithyareddy62/demo
+                   sh 'docker push nithyareddy62/demo'
                 }
             }
         }
