@@ -26,7 +26,7 @@ pipeline {
         post { 
         always { 
             cleanWs()
-            echo "${currentBuild.durationString}"
+            //echo "${currentBuild.durationString}"
         }
     }
     
