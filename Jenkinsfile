@@ -17,6 +17,8 @@ pipeline {
            steps{
                 timestamps {
                     sh 'mvn clean install'
+                    echo "Hello From sms"
+                    echo "Hello From Mayur"
                     logstashSend failBuild: true, maxLines: 10000
                  }
                 
@@ -26,7 +28,9 @@ pipeline {
         post { 
         always { 
             cleanWs()
-            //echo "${currentBuild.durationString}"
+            echo "${currentBuild.durationString}"
+            echo "${currentBuild.result}"
+            logstashSend failBuild: true, maxLines: 10000
         }
     }
     
