@@ -30,7 +30,7 @@ pipeline {
             cleanWs()
             echo "${currentBuild.durationString}"
            // currentBuild.result = 'FAILURE'
-            echo "${currentBuild.result}"
+            echo "pipeline_status_${currentBuild.result}"
             logstashSend failBuild: false, maxLines: 10000
         }
     }
