@@ -18,7 +18,7 @@ pipeline {
                 timestamps {
                     sh 'mvn clean install'
                     echo "Hello From sms"
-                    echo "Hello From Mayur"
+                    echo $$@
                     logstashSend failBuild: true, maxLines: 10000
                  }
                 
@@ -30,7 +30,7 @@ pipeline {
             cleanWs()
             echo "${currentBuild.durationString}"
             echo "${currentBuild.result}"
-            logstashSend failBuild: true, maxLines: 10000
+            logstashSend failBuild: false, maxLines: 10000
         }
     }
     
