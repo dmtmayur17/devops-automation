@@ -18,7 +18,7 @@ pipeline {
                 timestamps {
                     sh 'mvn clean install'
                     echo "Hello From sms"
-                  // error 'build errror'
+                    error 'build errror'
                     logstashSend failBuild: true, maxLines: 10000
                  }
                 
